@@ -1,3 +1,6 @@
+/*L ensemble des fonctions ici est destine a implementer les operations sur les polynomes mais avec le module GMP
+Pour l instant les polynomes ont des coeff et degres en integer ce qui ne presente pas un interet enorme en cryptographie ou l on manipule de grands nombres
+*/
 #include <stdio.h>
 #include <gmp.h>
 
