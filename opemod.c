@@ -1,3 +1,5 @@
+/*Comments are mainly in the ".h" file linked to each code*/
+
 #include "opemod.h"
 
 //OPERATIONS MODULAIRES
