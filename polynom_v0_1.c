@@ -1,3 +1,5 @@
+/*former code for polynoms. the new one uses chained lists. Files will be removed soon*/
+
 #include <stdh.io>
 #include "polynom_v0_1.h"
 
