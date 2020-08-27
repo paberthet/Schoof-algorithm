@@ -81,7 +81,9 @@ void polyn_freeMemory(polynom * a)
 	polynom * P = a;
 	while(P!=NULL)
 	{
-		
+		P = a.nextterm;
+		free(a);
+		polynom * a = P;
 	}
 }
 
