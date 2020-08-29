@@ -145,7 +145,7 @@ polynom * F_mulMonome(polynom * polynome, int degree, int coeff)
 		return NULL;
 	while(R != NULL)
 	{
-		P = F_addMonome(P, R->degree + degree, R->coeff*coeff);
+		P = F_addMonome(P, R->degree + degree, R->coeff*coeff);//ici on ne met pas de modulo sur les parametres comme on utilise F_addMonome qui s en charge
 		R = R->nextterm;
 	}
 	return P;
@@ -206,11 +206,10 @@ polynom * polyn_mod(polynom a, polynom mod) //modulo par polynome
 	{
 		polynom * B = polyn_copy(mod); //a = B*Q + R
 		polynom * Q = F_createMonome((a->degree - B->degree), (a->coeff * inv_mod(B->coeff)));
-		
-
+		B = F_polyn_mul(B,Q);
+		polynom * R = F_polyn_sub(a,B);
+		return polyn_mod(R,mod); //cette boucle recursive prendra fin car on retire le terme de plus grand exposant a chaque tour et les polynomes sont finis
 	}
-		
-	polynom * P = polyn_copy(a)
 }
 
 
